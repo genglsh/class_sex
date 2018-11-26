@@ -51,26 +51,26 @@ def run_benchmark():
 if __name__ == '__main__':
     batch_size  = 100
     num_batches  = 32
-    dict_tem = dict()
-    img_name  = 'timg.jpg'
-    img = cv2.imread(img_name)
-    cv2.imshow('1', img)
-    i = cv2.waitKey(0)
-    dict_tem[img_name] = i
-    print(i)
-    print(dict_tem)
-    w_f = 'test.json'
-    with open(w_f, 'w') as f:
-        json.dump(dict_tem, f)
-    '''
-    key(q) = 113 man
-    key(w) = 119 woman
-    '''
-    cv2.destroyAllWindows()
-    # if cv2.waitKey(100)>0:
-    #     cv2.destroyAllWindows()
+    # dict_tem = dict()
+    # img_name  = 'timg.jpg'
+    # img = cv2.imread(img_name)
+    # cv2.imshow('1', img)
+    # i = cv2.waitKey(0)
+    # dict_tem[img_name] = i
+    # print(i)
+    # print(dict_tem)
+    # w_f = 'test.json'
+    # with open(w_f, 'w') as f:
+    #     json.dump(dict_tem, f)
+    # '''
+    # key(q) = 113 man
+    # key(w) = 119 woman
+    # '''
+    # cv2.destroyAllWindows()
+    # # if cv2.waitKey(100)>0:
+    # #     cv2.destroyAllWindows()
 
-    # run_benchmark()
+    run_benchmark()
 
 
 

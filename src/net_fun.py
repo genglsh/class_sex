@@ -25,14 +25,14 @@ def fc_op(input_op, name, n_out, p):
     n_in = input_op.shape[-1].value
     with tf.name_scope(name) as scope:
         kernel = tf.get_variable(scope + 'w', shape=[n_in, n_out], dtype=tf.float32,
-                                 initializer=tf.Variable(tf.constant(0.1, shape=[n_out], dtype=tf.float32), name='b'))
+                                 initializer=tf.contrib.layers.xavier_initializer())
         biases = tf.Variable(tf.constant(0.1, shape=[n_out], dtype=tf.float32), name='b')
         activation = tf.nn.relu_layer(input_op, kernel, biases, name=scope)
         p += [kernel, biases]
         return activation
 
 
-def mpool_op(input_op, name, kh, kw, dw):
+def mpool_op(input_op, name, kh, kw, dw, dh):
     return tf.nn.max_pool(input_op, ksize=[1, kh, kw, 1], strides=[1, dh, dw, 1], padding='SAME', name=name)
 
 
